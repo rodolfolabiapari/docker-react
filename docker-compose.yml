@@ -1,0 +1,12 @@
+version: '3'
+services:
+        web:
+                # have to be a dockerfile in directory
+                build: 
+                        context: .
+                        dockerfile: Dockerfile.dev
+                ports:
+                        - "3000:3000"
+                volumes:
+                        - /app/node_modules
+                        - .:/app
